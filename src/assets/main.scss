@@ -1,0 +1,8 @@
+@import './utils/reset.scss';
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(183,243,255,1) 100%);
+}
