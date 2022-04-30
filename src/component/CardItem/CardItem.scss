@@ -1,3 +1,12 @@
+.card-item {
+  min-height: 240px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  @media screen and (max-width: 580px){
+    margin-right: 0;
+  }
+}
+
 .card-icon{
   width: 100%;
   display: flex;
@@ -13,4 +22,10 @@
     margin-top: 20px;
     margin-right: 10px;
   }
+}
+.updated-text{
+  position: absolute;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: rgb(165, 165, 165);
 }

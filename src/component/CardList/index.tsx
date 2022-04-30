@@ -1,28 +1,29 @@
 import CardItem from '../CardItem';
 
-import { useState, useEffect } from 'react';
-import { getWeatherInCity } from '../../utils/api';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../reducers/combineReducer';
+import { ApiTypes } from '../../types/types';
 
 import './CardList.scss';
 
 const CardList = () => {
-	const [data, setData] = useState<any>(null);
-
-	useEffect(() => {
-		const getData = async () => setData(await getWeatherInCity("Kiev"));
-		getData();
-	}, [setData])
-  const newData = {
-    id: data?.id || 0,
-    minTemp: data?.main?.temp_min || 0,
-    maxTemp: data?.main?.temp_max || 0,
-    img: data?.weather[0]?.icon || "",
-    city: data?.name || ""
-  }
- 
+	const weatherData = useSelector((state: RootState) => state.weatherData);
+	const { cityData } = weatherData
 	return  (
 		<div className="card-list-wrapper">
-      <CardItem id={newData.id} minTemp={newData.minTemp} maxTemp={newData.maxTemp} img={newData.img} city={newData.city} />
+			{cityData && cityData.map((item: ApiTypes) => {
+				return <CardItem 
+					key={item.id} 
+					id={item.id} 
+					img={item.weather.icon}
+					city={item.name}
+					maxTemp={item.main.temp_max}
+					minTemp={item.main.temp_min}
+					humidity={item.main.humidity}
+					isUpdating={item.isUpdate}
+					isUpdate={item.update}
+				/>
+			})}
 		</div>
 	);
 };
