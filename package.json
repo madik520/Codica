@@ -17,7 +17,9 @@
     "format:commit": "lint-staged",
     "rel": "standard-version",
     "prepare": "husky install",
-    "prepare:folders": "make-dir src/utils src/pages src/hooks src/hoc src/components src/assets"
+    "prepare:folders": "make-dir src/utils src/pages src/hooks src/hoc src/components src/assets",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -30,7 +32,7 @@
   ],
   "author": "madik520",
   "license": "MIT",
-  "homepage": "https://github.com/madik520/webpack-5#readme",
+  "homepage": "https://madik520.github.io/Codica",
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
