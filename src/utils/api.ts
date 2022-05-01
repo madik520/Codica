@@ -5,7 +5,8 @@ const KEY = '&appid=';
 const metrics = '&units=metric';
 
 export const getWeatherInCity = async (city: string, update: boolean) => {
-	const responce = await fetch(`${basePath}${WEATHER}${QUERY}${city}${KEY}${process.env.API_KEY}${metrics}`);
+	/* I use .env files, but i dont now how use it with github pages, and i use my api key public */
+	const responce = await fetch(`${basePath}${WEATHER}${QUERY}${city}${KEY}3baaceb5b5231055a73fe76199a98533${metrics}`);
 	const data = await responce.json();
 	const newData = {
 		id: data.id,
