@@ -1,10 +1,9 @@
 import AddCity from '../../component/AddCity';
 import CardList from '../../component/CardList';
-import './Home.scss'
+import './Home.scss';
 
 const Home = () => {
-
-	return(
+	return (
 		<div className="home-page">
 			<AddCity />
 			<CardList />
