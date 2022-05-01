@@ -6,15 +6,17 @@ import './Header.scss';
 
 const Header = () => {
 	const location = useLocation();
-	return(
+	return (
 		<header>
-			<div className='header-wrapper'>
-				<div className='header-icon'>
+			<div className="header-wrapper">
+				<div className="header-icon">
 					<CloudIcon color={'secondary'} />
 				</div>
-				<div className='header-location'>
-					<Typography variant='body1'>You here: </Typography>
-					<Typography color={"primary"} variant='body1'>{location.pathname === "/" ? "HOME" : location.pathname.toLocaleUpperCase()}</Typography>
+				<div className="header-location">
+					<Typography variant="body1">You here: </Typography>
+					<Typography color={'primary'} variant="body1">
+						{location.pathname === '/' ? 'HOME' : location.pathname.toLocaleUpperCase()}
+					</Typography>
 				</div>
 			</div>
 		</header>

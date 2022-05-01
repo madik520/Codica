@@ -1,4 +1,12 @@
-import { START_FETCHING, GET_CITY, ERROR_FETCHING, DELETE_CARD, UPDATE_CARD, IS_UPDATING } from '../constants/constants';
+import {
+	START_FETCHING,
+	GET_CITY,
+	ERROR_FETCHING,
+	DELETE_CARD,
+	UPDATE_CARD,
+	IS_UPDATING,
+	CARD_DETAILS
+} from '../constants/constants';
 
 // State types
 
@@ -10,63 +18,75 @@ export type ApiTypes = {
 		temp_max: number;
 		humidity: number;
 		feels_like: number;
-	},
+	};
 	wind: {
 		speed: number;
-	},
+	};
 	weather: {
 		icon: string;
 		description: string;
-	},
+	};
 	isUpdate: boolean;
 	update: boolean;
-}
+};
 
 export type StateTypes = {
 	isFetching: boolean;
 	cityData: ApiTypes[];
-	error: any;
+	error: ErrorTypes;
+	cardDetails: ApiTypes;
+};
+
+export type ErrorTypes = {
+	cod: string,
+	message: string
 }
 
 // Action Types
 
 interface ActionStartFetching {
-	type: typeof START_FETCHING,
-	payload: boolean
+	type: typeof START_FETCHING;
+	payload: boolean;
 }
 
 interface ActionGetCity {
-	type: typeof GET_CITY,
-	payload: ApiTypes
+	type: typeof GET_CITY;
+	payload: ApiTypes;
 }
 
 interface ActionErrorFetch {
-	type: typeof ERROR_FETCHING,
-	payload: any;
+	type: typeof ERROR_FETCHING;
+	payload: ErrorTypes;
 }
 
 interface ActionDeleteCard {
-	type: typeof DELETE_CARD,
-	payload: number
+	type: typeof DELETE_CARD;
+	payload: number;
 }
 
 interface ActionUpdateCard {
-	type: typeof UPDATE_CARD,
-	payload: ApiTypes
+	type: typeof UPDATE_CARD;
+	payload: ApiTypes;
 }
 
 interface ActionIsUpdating {
-	type: typeof IS_UPDATING,
+	type: typeof IS_UPDATING;
 	payload: {
-		id: number,
-		isUpdate: boolean
-	}
+		id: number;
+		isUpdate: boolean;
+	};
 }
 
-export type ActionTypes = 
-ActionStartFetching | 
-ActionGetCity       | 
-ActionErrorFetch    | 
-ActionDeleteCard    | 
-ActionUpdateCard    | 
-ActionIsUpdating;
+interface ActionCardDetails {
+	type: typeof CARD_DETAILS;
+	payload: number;
+}
+
+export type ActionTypes =
+	| ActionStartFetching
+	| ActionGetCity
+	| ActionErrorFetch
+	| ActionDeleteCard
+	| ActionUpdateCard
+	| ActionIsUpdating
+	| ActionCardDetails;
