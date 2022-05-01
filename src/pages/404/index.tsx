@@ -10,7 +10,7 @@ const NotFound = () => {
 			<Typography variant="h1">Ups error 404, page not found!</Typography>
 			<Typography variant="body1">
 				Back to
-				<Link to="/">
+				<Link to="/Codica">
 					<ArrowBackIcon /> Home
 				</Link>
 			</Typography>

@@ -87,7 +87,7 @@ const WeatherInfo = () => {
 								disableElevation
 								aria-label="outlined button group"
 							>
-								<Link to="/">
+								<Link to="/Codica">
 									<Button color={'success'}>Back to Home</Button>
 								</Link>
 								<Button onClick={updateDetailsInfo} color={'warning'}>

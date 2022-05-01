@@ -15,7 +15,7 @@ const Header = () => {
 				<div className="header-location">
 					<Typography variant="body1">You here: </Typography>
 					<Typography color={'primary'} variant="body1">
-						{location.pathname === '/' ? 'HOME' : location.pathname.toLocaleUpperCase()}
+						{location.pathname === '/Codica' ? 'HOME' : location.pathname.toLocaleUpperCase()}
 					</Typography>
 				</div>
 			</div>
